@@ -1,0 +1,27 @@
+{
+  "name": "utl",
+  "version": "1.0.0",
+  "description": "Nova engine para modernização do sistema UTL que trabalha em uma plataforma .bat",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skyrior/utl.git"
+  },
+  "author": "Guilherme SS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skyrior/utl/issues"
+  },
+  "homepage": "https://github.com/skyrior/utl#readme",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.15.4",
+    "mongoose": "^4.11.12"
+  }
+}
