@@ -1,7 +1,5 @@
 'use strict';
 
-var child_process = require('child_process');
-
 var mongoose = require('mongoose'),
   Task = mongoose.model('Tasks');
 
@@ -56,7 +54,29 @@ exports.delete_a_task = function(req, res) {
   });
 };
 
+var spawn = require('child_process').spawn;
+var exec = require('child_process').exec;
+
 exports.execute_bat = function(req, res){
-    child_process.spawn('cmd.exe', ['/c','Abre_CMD.bat']);
-    res.json({message: 'Terminal aberto com sucesso'});
-};
+    /*const bat = spawn(".\\script_bat\\Abre_CMD.bat", []);
+
+    bat.stdout.on('data', (data) => {
+        console.log(data.toString());
+    });
+    
+    bat.stderr.on('data', (data) => {
+        console.log(data.toString());
+    });
+    
+    bat.on('exit', (code) => {
+        console.log(`Child exited with code ${code}`);
+    });*/
+
+    exec(".\\script_bat\\Abre_CMD.bat", (err, stdout, stderr) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log(stdout);
+      });
+    }

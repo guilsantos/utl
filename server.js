@@ -1,6 +1,6 @@
 /*
+git pull origin master --allow-unrelated-histories
 var child_process = require('child_process');
-
 console.log("Iniciou");
 child_process.spawn('cmd.exe', ['/c','Mongo_Server_Start.bat']);
 console.log("Finalizou");
