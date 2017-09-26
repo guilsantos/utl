@@ -1,5 +1,6 @@
 'use strict';
 
+var child_process = require('child_process');
 
 var mongoose = require('mongoose'),
   Task = mongoose.model('Tasks');
@@ -53,4 +54,9 @@ exports.delete_a_task = function(req, res) {
       res.send(err);
     res.json({ message: 'Task successfully deleted' });
   });
+};
+
+exports.execute_bat = function(req, res){
+    child_process.spawn('cmd.exe', ['/c','Abre_CMD.bat']);
+    res.json({message: 'Terminal aberto com sucesso'});
 };

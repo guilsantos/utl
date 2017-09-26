@@ -1,13 +1,11 @@
+/*
 var child_process = require('child_process');
-
-/*child_process.exec('C:\Users\guilherme.santos\Desktop\Desktop\170308\Mongo_Server_Start.bat', function(error, stdout, stderr) {
-    console.log(stdout);
-});*/
 console.log("Iniciou");
-//child_process.spawn('cmd.exe', ['/c','Mongo_Server_Start.bat']);
-child_process.spawn('cmd.exe', ['/c','C:\Users\guilherme.santos\Documents\FATEC\TCC\Mongo_Server_Start.bat']);
+child_process.spawn('cmd.exe', ['/c','Mongo_Server_Start.bat']);
 console.log("Finalizou");
-/*var express = require('express'),
+*/
+
+var express = require('express'),
 app = express(),
 port = process.env.PORT || 3000,
 mongoose = require('mongoose'),
@@ -30,4 +28,9 @@ routes(app); //register the route
 app.listen(port);
 
 
-console.log('todo list RESTful API server started on: ' + port);*/
+console.log('todo list RESTful API server started on: ' + port);
+
+
+app.use(function(req, res) {
+    res.status(404).send({url: req.originalUrl + ' not found'})
+  });
